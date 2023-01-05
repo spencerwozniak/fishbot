@@ -6,19 +6,21 @@
 
 ### First time setup
 - Make sure Python 3.x is installed
-- Run install.bat
+- Run `install.bat`
+- See "Notes" section if the script does not initially work.
 
 ### To use
+- Make sure game is full screen
 - Go to fishing location
 - Pull out rod
-- Run main.py
+- Run `main.py`
 - Go back to game
 
 ### To stop
 - Hit ESC in game
 - Go to CMD and hit CTRL+C
 
-## How it works
+## Notes
 This script works by detecting color changes of a pixel that is specific to fishing. The loop for fishing is shown in the code below.
 ```
 while True: # While rod is casted
@@ -31,10 +33,18 @@ while True: # While rod is casted
 ```
 This is what the window should look like when the script is running properly:
 
-<img src="images/orignal.png" alt="original" width="200"/>
+<img src="images/original.png" alt="original" width="400"/>
 
 If we zoom in, we can see that the cyan pixel indicates the pixel that is being detected. 
 
-<img src="images/pixel.png" alt="original" width="200"/>
+<img src="images/pixel.png" alt="original" width="400"/>
 
-This pixel is white (`RGB == (255,255,255)`) when the rod is casted and is not white (`RGB != (255,255,255)`) when there is a fish caught. Therefore, we reel the rod in when the pixel is not white.
+This pixel is white (`color == (255,255,255)`) when the rod is casted and is not white (`color != (255,255,255)`) when there is a fish caught. Therefore, we reel the rod in when the pixel is not white.
+
+### Setting up pixel position
+Note that I have only tested this using Lunar Client on saicopvp.com. The pixel position may change with different computers, clients, or servers. To account for this, I have included a script (`pixel.py`) that will simulate the window that will be open when using the bot. It will take a screenshot of the window and ask for XY coordinates as input. This will save an image with a cyan pixel at the input position. As a general rule, start with `color = px[956,608]` and see where the cyan pixel is. Adjust the coordinates according to the diagram below.
+
+<img src="images/coords.png" alt="original" width="400"/>
+
+### Limitations
+- Depending on the server, the principle of detecting pixel color changes may not work. 
