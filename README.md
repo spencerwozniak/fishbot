@@ -42,9 +42,11 @@ If we zoom in, we can see that the cyan pixel indicates the pixel that is being 
 This pixel is white (`color == (255,255,255)`) when the rod is casted and is not white (`color != (255,255,255)`) when there is a fish caught. Therefore, we reel the rod in when the pixel is not white.
 
 ### Setting up pixel position
-Note that I have only tested this using Lunar Client on saicopvp.com. The pixel position may change with different computers, clients, or servers. To account for this, I have included a script (`pixel.py`) that will simulate the window that will be open when using the bot. It will take a screenshot of the window and ask for XY coordinates as input. This will save an image with a cyan pixel at the input position. As a general rule, start with `color = px[956,608]` and see where the cyan pixel is. Adjust the coordinates according to the diagram below.
+Note that I have only tested this using Lunar Client on saicopvp.com. The pixel position may change with different computers, clients, or servers. To account for this, I have included a script (`pixel.py`) that will simulate the window that will be open when using the bot. It will take a screenshot of the window and ask for XY coordinates as input. This will save an image with a cyan pixel at the input position. As a general rule, start with `x = 956` and `y = 608` and see where the cyan pixel is. Adjust the coordinates according to the diagram below.
 
 <img src="images/coords.png" alt="coords" width="400"/>
+
+Once the cyan pixel is on white text, as shown in the zoomed in image above, you will need to change **line 71** of `main.py` according to the XY coordinates you used as input.
 
 ### Limitations
 - Depending on the server, the principle of detecting pixel color changes may not work. 
