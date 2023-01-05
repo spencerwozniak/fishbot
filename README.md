@@ -31,10 +31,10 @@ while True: # While rod is casted
 ```
 This is what the window should look like when the script is running properly:
 
-![download](https://user-images.githubusercontent.com/98838077/210888907-0f02bc5f-25b1-46bd-af8d-870fa328c81e.png)
+<img src="images/orignal.png" alt="original" width="200"/>
 
 If we zoom in, we can see that the cyan pixel indicates the pixel that is being detected. 
 
-![Screenshot 2023-01-05 170502](https://user-images.githubusercontent.com/98838077/210889033-4a74e0d5-3d81-428f-a631-1535be62d411.png)
+<img src="images/pixel.png" alt="original" width="200"/>
 
-This pixel is white (i.e. `RGB = (255,255,255)`) when the rod is casted and is not white when there is a fish caught. Therefore, we reel the rod in when the pixel is not white.
+This pixel is white (`RGB == (255,255,255)`) when the rod is casted and is not white (`RGB != (255,255,255)`) when there is a fish caught. Therefore, we reel the rod in when the pixel is not white.
