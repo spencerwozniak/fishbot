@@ -3,6 +3,8 @@
 ### Features
 - Casts rod and reels rod in when fish is caught (v1)
 - Avoids AFK kick by moving character and mouse position (v2)
+- Goes to fishing location (v3)
+- Sells fish (v3)
 
 ### First time setup
 - Make sure Python 3.x is installed
