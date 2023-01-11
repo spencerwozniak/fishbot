@@ -96,6 +96,9 @@ def sell_fish(px=36, method='command'):
     t.sleep(0.5)
     m.press('esc') # Exit fish shop
     
+    if method != 'command':
+        go_fish()
+    
 
 def go_fish():
     say('Going to fish.')
@@ -209,7 +212,8 @@ def main():
 
     while True:
         fish(num_fish=75)                    # Catch 75 fish
-        sell_fish(px=36, method='command')   # Sell fish
+        # If you have /gshop then set method='command'
+        sell_fish(px=36, method='spawn')   # Sell fish
 
 if __name__ == '__main__':
     try:
